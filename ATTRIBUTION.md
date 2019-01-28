@@ -1,0 +1,2 @@
+- `edited_platformPack_tilesheet@2.png` based on [platformPack_tilesheet@2.png; CC0 1.0 Universal](https://kenney.nl/assets/simplified-platformer-pack)
+- backgrounds based on [3 Backgrounds - FREE; free](https://mobilegamegraphics.com/product/free-parallax-backgrounds/)

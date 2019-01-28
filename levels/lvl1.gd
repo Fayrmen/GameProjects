@@ -26,7 +26,7 @@ func _on_TNT_click():
 
 	var norm = ($Ball.position - $TNT.position).normalized();
 
-	var q1 = -len_vect+300
+	var q1 = -len_vect+500
 	if q1 >= 0:
 		print(log(q1))
 		var vect = Vector2(log(q1)*norm.x,
@@ -44,7 +44,7 @@ func _on_TNT2_click():
 	var norm = ($Ball.position - $TNT2.position).normalized();
 
 
-	var q1 = -len_vect+300;
+	var q1 = -len_vect+500;
 	if q1 >= 0:
 		
 		print(log(q1))
@@ -55,3 +55,6 @@ func _on_TNT2_click():
 		$Ball.bang(vect)
 	else:
 		print('мяч далеко2')
+
+func _on_Ball_body_entered(body):
+	print(body)

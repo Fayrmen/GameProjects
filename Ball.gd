@@ -12,4 +12,6 @@ func _ready():
 
 func bang(vect):
 	print(vect)
-	apply_impulse(Vector2(), vect*100)
+	apply_impulse(Vector2(), vect*200)
+	get_tree().change_scene("res://levels/lvl2.tscn")
+

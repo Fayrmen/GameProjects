@@ -2,13 +2,13 @@
 
 [ext_resource path="res://levels/lvl1.gd" type="Script" id=1]
 [ext_resource path="res://Ball.tscn" type="PackedScene" id=2]
-[ext_resource path="res://funky-lines.png" type="Texture" id=3]
-[ext_resource path="res://Ball.gd" type="Script" id=4]
-[ext_resource path="res://TNT.tscn" type="PackedScene" id=5]
-[ext_resource path="res://wall.tscn" type="PackedScene" id=6]
-[ext_resource path="res://globalwall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/bg/layer_1.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/hud.png" type="Texture" id=4]
+[ext_resource path="res://assets/tileshet.res" type="TileSet" id=5]
+[ext_resource path="res://Ball.gd" type="Script" id=6]
+[ext_resource path="res://TNT.tscn" type="PackedScene" id=7]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 Ball = ExtResource( 2 )
@@ -19,8 +19,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1020.0
-margin_bottom = 600.0
+margin_right = 900.0
+margin_bottom = 1600.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -28,14 +28,44 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 3 )
+stretch_mode = 5
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin" ]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+
+editor/display_folded = true
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1080.0
+margin_bottom = 1920.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
 expand = true
-stretch_mode = 2
+stretch_mode = 3
+_sections_unfolded = [ "Mouse", "Rect" ]
 
-[node name="TileMap" type="TileMap" parent="." index="1"]
+[node name="TileMap" type="TileMap" parent="." index="2"]
 
+position = Vector2( 2, 126 )
+scale = Vector2( 0.5, 0.5 )
 mode = 0
-tile_set = null
-cell_size = Vector2( 64, 64 )
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 128, 128 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
@@ -49,29 +79,25 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray(  )
-_sections_unfolded = [ "Cell", "Transform" ]
+tile_data = PoolIntArray( 0, 47, 0, 1, 47, 0, 2, 47, 0, 3, 47, 0, 4, 47, 0, 5, 47, 0, 6, 47, 0, 7, 47, 0, 8, 47, 0, 9, 47, 0, 10, 47, 0, 11, 47, 0, 12, 47, 0, 13, 47, 0, 65536, 47, 0, 65549, 61, 0, 131072, 47, 0, 131085, 61, 0, 196608, 47, 0, 196621, 61, 0, 262144, 47, 0, 262157, 61, 0, 327680, 47, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 47, 0, 393216, 47, 0, 393229, 47, 0, 458752, 47, 0, 458765, 47, 0, 524288, 47, 0, 524298, 23, 0, 524299, 23, 0, 524300, 23, 0, 524301, 47, 0, 589824, 47, 0, 589837, 47, 0, 655360, 47, 0, 655373, 47, 0, 720896, 47, 0, 720909, 47, 0, 786432, 47, 0, 786445, 47, 0, 851968, 47, 0, 851981, 47, 0, 917504, 47, 0, 917517, 47, 0, 983040, 47, 0, 983053, 47, 0, 1048576, 47, 0, 1048589, 47, 0, 1114112, 47, 0, 1114125, 47, 0, 1179648, 47, 0, 1179661, 47, 0, 1245184, 47, 0, 1245185, 65, 0, 1245186, 65, 0, 1245188, 67, 0, 1245194, 65, 0, 1245195, 65, 0, 1245196, 65, 0, 1245197, 47, 0, 1310720, 0, 0, 1310721, 0, 0, 1310722, 0, 0, 1310723, 0, 0, 1310724, 0, 0, 1310725, 0, 0, 1310726, 0, 0, 1310727, 0, 0, 1310728, 0, 0, 1310729, 0, 0, 1310730, 0, 0, 1310731, 0, 0, 1310732, 0, 0, 1310733, 0, 0, 1376256, 37, 0, 1376257, 37, 0, 1376258, 37, 0, 1376259, 37, 0, 1376260, 37, 0, 1376261, 37, 0, 1376262, 37, 0, 1376263, 37, 0, 1376264, 37, 0, 1376265, 37, 0, 1376266, 37, 0, 1376267, 37, 0, 1376268, 37, 0, 1376269, 37, 0, 1441792, 37, 0, 1441793, 37, 0, 1441794, 37, 0, 1441795, 37, 0, 1441796, 37, 0, 1441797, 37, 0, 1441798, 37, 0, 1441799, 37, 0, 1441800, 37, 0, 1441801, 37, 0, 1441802, 37, 0, 1441803, 37, 0, 1441804, 37, 0, 1441805, 37, 0 )
+_sections_unfolded = [ "Cell", "Transform", "Z Index" ]
 
-[node name="Ball" parent="." index="2" instance=ExtResource( 2 )]
+[node name="Ball" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 510, 130 )
-script = ExtResource( 4 )
+position = Vector2( 491.256, 732.614 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Transform", "Visibility" ]
 
-[node name="TNT" parent="." index="3" instance=ExtResource( 5 )]
+[node name="TNT" parent="." index="4" instance=ExtResource( 7 )]
 
-position = Vector2( 520, 520 )
+position = Vector2( 449.687, 1341.87 )
 _sections_unfolded = [ "Material", "Pickable", "Transform", "Visibility" ]
 
-[node name="TNT2" parent="." index="4" instance=ExtResource( 5 )]
+[node name="TNT2" parent="." index="5" instance=ExtResource( 7 )]
 
-position = Vector2( 340, 230 )
+position = Vector2( 266.946, 648.334 )
 
-[node name="wall" parent="." index="5" instance=ExtResource( 6 )]
-
-position = Vector2( 920, 180 )
-
-[node name="StaticBody2D" parent="." index="6" instance=ExtResource( 7 )]
+[connection signal="body_entered" from="Ball" to="." method="_on_Ball_body_entered"]
 
 [connection signal="click" from="TNT" to="." method="_on_TNT_click"]
 
