@@ -3,17 +3,17 @@
 [ext_resource path="res://assets/tilesheet.gd" type="Script" id=1]
 [ext_resource path="res://assets/edited_platformPack_tilesheet@2.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 64.0078, 63.996 )
 
-[sub_resource type="RectangleShape2D" id=44]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 64.0079, 63.9857 )
 
-[node name="tilesheet" type="Node2D" index="0"]
+[node name="tilesheet" type="Node2D"]
 
 position = Vector2( 0, 1 )
 script = ExtResource( 1 )
@@ -44,7 +44,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="1_spring/1_spring_ground_1/StaticBody2D" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="1_spring_ground_2" type="Sprite" parent="1_spring" index="1"]
 
@@ -68,7 +68,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="1_spring/1_spring_ground_2/StaticBody2D" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="1_spring_platform_1" type="Sprite" parent="1_spring" index="2"]
 
@@ -120,6 +120,8 @@ polygon = PoolVector2Array( -63.9898, -63.9381, 63.9676, -63.9837, 63.8959, 16.3
 
 [node name="2_summer" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
+
 [node name="2_summer_ground_1" type="Sprite" parent="2_summer" index="0"]
 
 editor/display_folded = true
@@ -142,7 +144,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="2_summer/2_summer_ground_1/StaticBody2D" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="2_summer_ground_2" type="Sprite" parent="2_summer" index="1"]
 
@@ -165,7 +167,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="2_summer/2_summer_ground_2/StaticBody2D2" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="2_summer_platform_1" type="Sprite" parent="2_summer" index="2"]
 
@@ -262,7 +264,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="2_summer/2_summer_swamp_2/StaticBody2D" index="0"]
 
 position = Vector2( 520, 130 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="diamond" type="Node2D" parent="2_summer" index="6"]
 
@@ -335,7 +337,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="3_winter/3_winter_ground_1/StaticBody2D" index="0"]
 
 position = Vector2( 520, 130 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="3_winter_ground_2" type="Sprite" parent="3_winter" index="1"]
 
@@ -360,7 +362,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="3_winter/3_winter_ground_2/StaticBody2D" index="0"]
 
 position = Vector2( 520, 130 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="3_winter_swamp_1" type="Sprite" parent="3_winter" index="2"]
 
@@ -409,7 +411,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="3_winter/3_winter_swamp_2/StaticBody2D" index="0"]
 
 position = Vector2( 520, 130 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="3_winter_platform_1" type="Sprite" parent="3_winter" index="4"]
 
@@ -535,6 +537,7 @@ _sections_unfolded = [ "Region" ]
 
 [node name="button" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( 0, 520 )
 
 [node name="button1" type="Sprite" parent="button" index="0"]
@@ -632,7 +635,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other_wall/other_wall_1/StaticBody2D" index="0"]
 
-shape = SubResource( 44 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="other_wall_2" type="Sprite" parent="other_wall" index="1"]
@@ -657,7 +660,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other_wall/other_wall_2/StaticBody2D" index="0"]
 
-shape = SubResource( 44 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="other_wall_3" type="Sprite" parent="other_wall" index="2"]
@@ -683,7 +686,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other_wall/other_wall_3/StaticBody2D" index="0"]
 
-shape = SubResource( 44 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="other_wall_4" type="Sprite" parent="other_wall" index="3"]
@@ -708,7 +711,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other_wall/other_wall_4/StaticBody2D" index="0"]
 
-shape = SubResource( 44 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="other_wall_5" type="Sprite" parent="other_wall" index="4"]
@@ -733,7 +736,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other_wall/other_wall_5/StaticBody2D" index="0"]
 
-shape = SubResource( 44 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="other_wall_6" type="Sprite" parent="other_wall" index="5"]
@@ -758,7 +761,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other_wall/other_wall_6/StaticBody2D" index="0"]
 
-shape = SubResource( 44 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="other_wall_7" type="Sprite" parent="other_wall" index="6"]
@@ -783,7 +786,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other_wall/other_wall_7/StaticBody2D" index="0"]
 
-shape = SubResource( 44 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="other_wall_8" type="Sprite" parent="other_wall" index="7"]
@@ -808,7 +811,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other_wall/other_wall_8/StaticBody2D" index="0"]
 
-shape = SubResource( 44 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="other_wall_9" type="Sprite" parent="other_wall" index="8"]
@@ -833,7 +836,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other_wall/other_wall_9/StaticBody2D" index="0"]
 
-shape = SubResource( 44 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="other_wall_10" type="Sprite" parent="other_wall" index="9"]
@@ -858,7 +861,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other_wall/other_wall_10/StaticBody2D" index="0"]
 
-shape = SubResource( 44 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="other_wall_11" type="Sprite" parent="other_wall" index="10"]
@@ -883,7 +886,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other_wall/other_wall_11/StaticBody2D" index="0"]
 
-shape = SubResource( 44 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="other_wall_12" type="Sprite" parent="other_wall" index="11"]
@@ -908,7 +911,7 @@ _sections_unfolded = [ "Pickable", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other_wall/other_wall_12/StaticBody2D" index="0"]
 
-shape = SubResource( 44 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="other_wall_13" type="Sprite" parent="other_wall" index="12"]
@@ -933,7 +936,7 @@ _sections_unfolded = [ "Pickable", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other_wall/other_wall_13/StaticBody2D" index="0"]
 
-shape = SubResource( 44 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="other_wall_14" type="Sprite" parent="other_wall" index="13"]
@@ -958,7 +961,7 @@ _sections_unfolded = [ "Pickable", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other_wall/other_wall_14/StaticBody2D" index="0"]
 
-shape = SubResource( 44 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ball" type="Node2D" parent="." index="7"]
@@ -1059,8 +1062,6 @@ _sections_unfolded = [ "Region" ]
 
 [node name="item" type="Node2D" parent="." index="9"]
 
-editor/display_folded = true
-
 [node name="wall27" type="Sprite" parent="item" index="0"]
 
 position = Vector2( 70, 590 )
@@ -1087,27 +1088,11 @@ _sections_unfolded = [ "Region" ]
 
 [node name="thorn" type="Sprite" parent="item" index="3"]
 
-editor/display_folded = true
 position = Vector2( 70, 720 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 640, 128, 128 )
 _sections_unfolded = [ "Region" ]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="item/thorn" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="item/thorn/StaticBody2D" index="0"]
-
-build_mode = 1
-polygon = PoolVector2Array( -62.6395, 64.0156, -33.5958, -4.35272, -28.5838, -4.35272, 1.47502, 63.9977, 30.9172, -4.35284, 35.0296, -4.35284, 66.2035, 64.0602 )
 
 [node name="gear" type="Sprite" parent="item" index="4"]
 

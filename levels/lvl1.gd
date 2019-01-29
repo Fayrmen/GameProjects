@@ -1,60 +1,37 @@
 extends Node
 export (PackedScene) var Ball
 
+const TNT_explode_radius = 500
+
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+    # Called when the node is added to the scene for the first time.
+    # Initialization here
+    pass
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
 
-#func _on_TNT_click():
-#	print('Big Bang!')
-#	var vect = Vector2(100/($Ball.position.x - $TNT.position.x + 0.001),
-#					   100/($Ball.position.y - $TNT.position.y));
-#	$Ball.bang(vect)
 
+func _on_TNT_explode(TNT_position):
+    var len_vect = sqrt(($Ball.position.x - TNT_position.x)*($Ball.position.x - TNT_position.x) +
+                        ($Ball.position.y - TNT_position.y)*($Ball.position.y - TNT_position.y))
 
-func _on_TNT_click():
-	print('Bang! TNT')
+    var norm = ($Ball.position - TNT_position).normalized();
 
-	var len_vect = sqrt(($Ball.position.x - $TNT.position.x)*($Ball.position.x - $TNT.position.x) +
-						($Ball.position.y - $TNT.position.y)*($Ball.position.y - $TNT.position.y))
-
-	var norm = ($Ball.position - $TNT.position).normalized();
-
-	var q1 = -len_vect+500
-	if q1 >= 0:
-		print(log(q1))
-		var vect = Vector2(log(q1)*norm.x,
-		log(q1)*norm.y)
-		
-		$Ball.bang(vect)
-	else:
-		print('мяч далеко')
-
-func _on_TNT2_click():
-	print('Bang! TNT2')
-
-	var len_vect = sqrt(($Ball.position.x - $TNT2.position.x)*($Ball.position.x - $TNT2.position.x) +
-						($Ball.position.y - $TNT2.position.y)*($Ball.position.y - $TNT2.position.y))
-	var norm = ($Ball.position - $TNT2.position).normalized();
-
-
-	var q1 = -len_vect+500;
-	if q1 >= 0:
-		
-		print(log(q1))
-		
-		var vect = Vector2(log(q1)*norm.x,
-		log(q1)*norm.y)
-		
-		$Ball.bang(vect)
-	else:
-		print('мяч далеко2')
+    var calc_range = -len_vect+TNT_explode_radius
+    if calc_range >= 0:
+        var vect = Vector2(log(calc_range)*norm.x, log(calc_range)*norm.y)
+        $Ball.bang(vect)
 
 func _on_Ball_body_entered(body):
-	print(body)
+    if (body.is_in_group("die")):
+        
+        $HUD.show_panel_fail()
+    
+
+    
+    
+    #emit_signal("hit")
+        #$CollisionShape2D.call_deferred("set_disabled", true)

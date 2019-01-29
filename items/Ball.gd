@@ -1,9 +1,4 @@
-extends Node2D
-
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-signal click
+extends RigidBody2D
 
 func _ready():
     # Called when the node is added to the scene for the first time.
@@ -15,7 +10,7 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
+func bang(vect):
+    apply_impulse(Vector2(), vect*200)
+    #get_tree().change_scene("res://levels/lvl2.tscn")
 
-func _on_Control_gui_input(ev):
-    if ev.is_action_pressed("click"):
-        emit_signal("click")

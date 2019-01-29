@@ -1,9 +1,6 @@
-extends Node2D
+extends StaticBody2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-signal click
+signal explode
 
 func _ready():
     # Called when the node is added to the scene for the first time.
@@ -15,7 +12,7 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-
 func _on_Control_gui_input(ev):
     if ev.is_action_pressed("click"):
-        emit_signal("click")
+        emit_signal("explode", self.position)
+

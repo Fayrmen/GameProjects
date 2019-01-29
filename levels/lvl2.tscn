@@ -1,11 +1,13 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://levels/lvl1.gd" type="Script" id=1]
-[ext_resource path="res://Ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://items/Ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/bg/layer_1.jpg" type="Texture" id=3]
 [ext_resource path="res://assets/hud.png" type="Texture" id=4]
 [ext_resource path="res://assets/tileshet.res" type="TileSet" id=5]
-[ext_resource path="res://Ball.gd" type="Script" id=6]
+[ext_resource path="res://items/Ball.gd" type="Script" id=6]
+
+
 
 [node name="Node" type="Node" index="0"]
 
