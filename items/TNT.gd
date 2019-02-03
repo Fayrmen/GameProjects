@@ -15,4 +15,7 @@ func _ready():
 func _on_Control_gui_input(ev):
     if ev.is_action_pressed("click"):
         emit_signal("explode", self.position)
+        self.visible = false
+        $CollisionShape2D.call_deferred("set_disabled", true)
+
 

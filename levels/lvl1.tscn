@@ -1,13 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://levels/lvl1.gd" type="Script" id=1]
 [ext_resource path="res://items/Ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/bg/layer_1.jpg" type="Texture" id=3]
-[ext_resource path="res://assets/tileshet.res" type="TileSet" id=4]
-[ext_resource path="res://items/Ball.gd" type="Script" id=5]
-[ext_resource path="res://items/thorn.tscn" type="PackedScene" id=6]
-[ext_resource path="res://items/TNT.tscn" type="PackedScene" id=7]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=8]
+[ext_resource path="res://items/Ball.gd" type="Script" id=4]
+[ext_resource path="res://items/TNT.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/tileshet.res" type="TileSet" id=6]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=7]
 
 [node name="level" type="Node" index="0"]
 
@@ -35,12 +34,29 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="TileMap" type="TileMap" parent="." index="1"]
+[node name="Ball" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 369.276, 277.476 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Transform", "Visibility" ]
+
+[node name="Items" type="Node" parent="." index="2"]
+
+[node name="TNT2" parent="Items" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( 162.187, 1469.9 )
+
+[node name="TNT" parent="Items" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 641.859, 958.448 )
+_sections_unfolded = [ "Material", "Pause", "Pickable", "Transform", "Visibility" ]
+
+[node name="TileMap" type="TileMap" parent="." index="3"]
 
 position = Vector2( 2, 126 )
 scale = Vector2( 0.5, 0.5 )
 mode = 0
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 6 )
 cell_size = Vector2( 128, 128 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -55,48 +71,17 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 0, 47, 0, 1, 47, 0, 2, 47, 0, 3, 47, 0, 4, 47, 0, 5, 47, 0, 6, 47, 0, 7, 47, 0, 8, 47, 0, 9, 47, 0, 10, 47, 0, 11, 47, 0, 12, 47, 0, 13, 47, 0, 65536, 47, 0, 65549, 61, 0, 131072, 47, 0, 131085, 61, 0, 196608, 47, 0, 196621, 61, 0, 262144, 47, 0, 262157, 61, 0, 327680, 47, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 47, 0, 393216, 47, 0, 393229, 47, 0, 458752, 47, 0, 458765, 47, 0, 524288, 47, 0, 524298, 23, 0, 524299, 23, 0, 524300, 23, 0, 524301, 47, 0, 589824, 47, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589837, 47, 0, 655360, 47, 0, 655373, 47, 0, 720896, 47, 0, 720909, 47, 0, 786432, 47, 0, 786445, 47, 0, 851968, 47, 0, 851981, 47, 0, 917504, 47, 0, 917517, 47, 0, 983040, 47, 0, 983053, 47, 0, 1048576, 47, 0, 1048589, 47, 0, 1114112, 47, 0, 1114125, 47, 0, 1179648, 47, 0, 1179661, 47, 0, 1245184, 47, 0, 1245188, 67, 0, 1245197, 47, 0, 1310720, 0, 0, 1310721, 0, 0, 1310722, 0, 0, 1310723, 0, 0, 1310724, 0, 0, 1310725, 0, 0, 1310726, 0, 0, 1310727, 0, 0, 1310728, 0, 0, 1310729, 0, 0, 1310730, 0, 0, 1310731, 0, 0, 1310732, 0, 0, 1310733, 0, 0, 1376256, 37, 0, 1376257, 37, 0, 1376258, 37, 0, 1376259, 37, 0, 1376260, 37, 0, 1376261, 37, 0, 1376262, 37, 0, 1376263, 37, 0, 1376264, 37, 0, 1376265, 37, 0, 1376266, 37, 0, 1376267, 37, 0, 1376268, 37, 0, 1376269, 37, 0, 1441792, 37, 0, 1441793, 37, 0, 1441794, 37, 0, 1441795, 37, 0, 1441796, 37, 0, 1441797, 37, 0, 1441798, 37, 0, 1441799, 37, 0, 1441800, 37, 0, 1441801, 37, 0, 1441802, 37, 0, 1441803, 37, 0, 1441804, 37, 0, 1441805, 37, 0 )
-_sections_unfolded = [ "Cell", "Transform", "Z Index" ]
+tile_data = PoolIntArray( 0, 47, 0, 1, 47, 0, 2, 47, 0, 3, 47, 0, 4, 47, 0, 5, 47, 0, 6, 47, 0, 7, 47, 0, 8, 47, 0, 9, 47, 0, 10, 47, 0, 11, 47, 0, 12, 47, 0, 13, 47, 0, 65536, 47, 0, 65537, 50, 0, 65538, 50, 0, 65539, -1610612668, 0, 65549, 61, 0, 131072, 47, 0, 131073, 50, 0, 131074, -1610612668, 0, 131085, 61, 0, 196608, 47, 0, 196609, -1610612668, 0, 196614, 1, 0, 196621, 61, 0, 262144, 47, 0, 262150, 38, 0, 262157, 61, 0, 327680, 47, 0, 327686, 38, 0, 327693, 47, 0, 393216, 47, 0, 393217, -1610612671, 0, 393222, 1610612801, 0, 393229, 47, 0, 458752, 47, 0, 458753, -1610612671, 0, 458765, 47, 0, 524288, 47, 0, 524289, -1610612671, 0, 524301, 47, 0, 589824, 47, 0, 589825, -1610612671, 0, 589837, 47, 0, 655360, 47, 0, 655361, -1610612671, 0, 655364, 74, 0, 655373, 47, 0, 720896, 47, 0, 720897, -1610612671, 0, 720898, 536870935, 0, 720900, 50, 0, 720901, 71, 0, 720902, 72, 0, 720903, 73, 0, 720904, 74, 0, 720908, 536870980, 0, 720909, 47, 0, 786432, 47, 0, 786433, -1610612671, 0, 786434, 536870935, 0, 786436, 50, 0, 786437, 50, 0, 786438, 50, 0, 786439, 50, 0, 786440, 50, 0, 786443, 536870980, 0, 786444, 50, 0, 786445, 47, 0, 851968, 47, 0, 851969, -1610612671, 0, 851972, 45, 0, 851973, 45, 0, 851974, 45, 0, 851975, 45, 0, 851976, 45, 0, 851979, 45, 0, 851980, 45, 0, 851981, 47, 0, 917504, 47, 0, 917505, -1610612671, 0, 917515, 63, 0, 917517, 47, 0, 983040, 47, 0, 983041, -1610612671, 0, 983051, 536870975, 0, 983053, 47, 0, 1048576, 47, 0, 1048587, 536870975, 0, 1048589, 47, 0, 1114112, 47, 0, 1114113, 67, 0, 1114120, 536870935, 0, 1114121, 536870982, 0, 1114122, 536870981, 0, 1114123, 536870975, 0, 1114125, 47, 0, 1179648, 47, 0, 1179649, 536870960, 0, 1179652, 67, 0, 1179653, 67, 0, 1179654, 67, 0, 1179656, 536870981, 0, 1179657, 536870962, 0, 1179658, 536870962, 0, 1179659, 536870975, 0, 1179661, 47, 0, 1245184, 47, 0, 1245185, 536870960, 0, 1245187, 536870962, 0, 1245188, 536870962, 0, 1245189, 536870962, 0, 1245190, 536870962, 0, 1245191, 536870962, 0, 1245192, 50, 0, 1245193, 536870962, 0, 1245194, 536870962, 0, 1245195, 536870975, 0, 1245197, 47, 0, 1310720, 45, 0, 1310721, 45, 0, 1310723, 45, 0, 1310724, 0, 0, 1310725, 0, 0, 1310726, 0, 0, 1310729, 0, 0, 1310730, 0, 0, 1310731, 0, 0, 1310733, 0, 0, 1376256, 45, 0, 1376257, 45, 0, 1376259, 45, 0, 1376260, 37, 0, 1376261, 37, 0, 1376262, 37, 0, 1376265, 37, 0, 1376266, 37, 0, 1376267, 37, 0, 1376269, 37, 0, 1441792, 37, 0, 1441793, 37, 0, 1441795, 37, 0, 1441796, 37, 0, 1441797, 37, 0, 1441798, 37, 0, 1441801, 37, 0, 1441802, 37, 0, 1441803, 37, 0, 1441805, 37, 0, 1507335, 65, 0, 1507336, 65, 0, 1507340, 65, 0, 1572864, 65, 0, 1572865, 65, 0, 1572866, 65, 0, 1572867, 65, 0, 1572868, 65, 0, 1572869, 65, 0, 1572870, 65, 0, 1572871, 65, 0, 1572872, 65, 0, 1572873, 65, 0, 1572874, 65, 0, 1572875, 65, 0, 1572876, 65, 0, 1572877, 65, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Transform", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Ball" parent="." index="2" instance=ExtResource( 2 )]
-
-position = Vector2( 161.655, 300.193 )
-script = ExtResource( 5 )
-_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Transform", "Visibility" ]
-
-[node name="Items" type="Node" parent="." index="3"]
-
-editor/display_folded = true
-
-[node name="thorn2" parent="Items" index="0" groups=[
-"die",
-] instance=ExtResource( 6 )]
-
-position = Vector2( 672.881, 1374.07 )
-scale = Vector2( 0.5, 0.5 )
-
-[node name="thorn" parent="Items" index="1" groups=[
-"die",
-] instance=ExtResource( 6 )]
-
-position = Vector2( 97.4906, 1374.3 )
-scale = Vector2( 0.5, 0.5 )
-
-[node name="TNT2" parent="Items" index="2" instance=ExtResource( 7 )]
-
-position = Vector2( 257.956, 637.956 )
-
-[node name="TNT" parent="Items" index="3" instance=ExtResource( 7 )]
-
-position = Vector2( 449.687, 1341.87 )
-_sections_unfolded = [ "Material", "Pickable", "Transform", "Visibility" ]
-
-[node name="HUD" parent="." index="4" instance=ExtResource( 8 )]
+[node name="HUD" parent="." index="4" instance=ExtResource( 7 )]
 
 [connection signal="body_entered" from="Ball" to="." method="_on_Ball_body_entered"]
+
+[connection signal="contact" from="Ball" to="." method="_on_Ball_contact"]
 
 [connection signal="explode" from="Items/TNT2" to="." method="_on_TNT_explode"]
 

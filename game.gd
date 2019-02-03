@@ -1,5 +1,7 @@
 extends Node
 
+var current_level = null
+
 func _ready():
     print('_ready')
 

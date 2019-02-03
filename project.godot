@@ -22,8 +22,14 @@ game="*res://game.gd"
 
 window/size/width=900
 window/size/height=1600
+window/size/test_width=400
+window/size/test_height=712
 window/stretch/mode="viewport"
-window/stretch/aspect="keep"
+window/stretch/aspect="keep_width"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "godot-git-control.funabab", "sprite_quick_offset" )
 
 [input]
 
@@ -33,5 +39,4 @@ click=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_n
 [rendering]
 
 quality/intended_usage/framebuffer_allocation=0
-environment/default_clear_color=Color( 0.351562, 0.351562, 0.351562, 1 )
 environment/default_environment="res://default_env.tres"

@@ -3,15 +3,12 @@
 [ext_resource path="res://items/TNT.gd" type="Script" id=1]
 [ext_resource path="res://assets/tnt.png" type="Texture" id=2]
 
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10.7476, 10.8322 )
 
-[node name="TNT" type="StaticBody2D" index="0"]
+[node name="TNT" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -52,8 +49,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
-
-[connection signal="mouse_entered" from="." to="." method="_on_TNT_mouse_entered"]
 
 [connection signal="gui_input" from="Control" to="." method="_on_Control_gui_input"]
 
